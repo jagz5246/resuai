@@ -1,5 +1,7 @@
 import * as crypto from "node:crypto";
 import { v4 as uuidv4 } from 'uuid';
+import clsx, {type ClassValue} from "clsx";
+import {twMerge} from "tailwind-merge";
 
 /**
  * Formats a file size in bytes to a human-readable string (KB, MB, GB)
@@ -20,3 +22,7 @@ export function formatSize(bytes: number): string {
 }
 
 export const generateUUID = () => uuidv4();
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(...inputs));
+}
