@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
-import sampleResumes from "../../constants/index.ts";
+// import sampleResumes from "../../constants/index.ts";
 import {usePuterStore} from "~/lib/puter";
 import {useLocation, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
@@ -39,7 +39,7 @@ export default function Home() {
         loadResumes();
     }, []);
   return (
-    <main className="bg-[url('images/bg-main.svg')] bg-cover">
+    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />
 
     <section className="main-section">

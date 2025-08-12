@@ -85,7 +85,7 @@ const Upload = () => {
         // console.log({companyName, jobTitle, jobDescription, file});
     }
     return (
-        <main className="bg-[url('images/bg-main.svg')] bg-cover">
+        <main className="bg-[url('/images/bg-main.svg')] bg-cover">
             <Navbar />
             <section className="main-section">
                 <div className="page-heading py-16">
