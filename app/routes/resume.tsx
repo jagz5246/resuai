@@ -24,28 +24,28 @@ const Resume = () => {
     useEffect(()=> {
         const loadResume = async () => {
             const resume = await kv.get(`resume:${id}`);
-            console.log(`resume: ${id}`, resume);
+            // console.log(`resume: ${id}`, resume);
             if(!resume) return;
 
             const data = JSON.parse(resume);
             const resumeBlob = await fs.read(data.resumePath);
-            console.log("resume data", data);
+            // console.log("resume data", data);
             if(!resumeBlob) return;
 
             const pdfBlob = new Blob([resumeBlob], { type: "application/pdf" });
             const resumeUrl = URL.createObjectURL(pdfBlob);
-            console.log(resumeUrl);
+            // console.log(resumeUrl);
             setResumeUrl(resumeUrl);
 
             const imageBlob = await fs.read(data.imagePath);
-            console.log("imageBlob", imageBlob);
+            // console.log("imageBlob", imageBlob);
             if(!imageBlob) return;
             const imageUrl = URL.createObjectURL(imageBlob);
             setImageUrl(imageUrl);
 
             setFeedback(data.feedback);
 
-            console.log({resumeUrl, imageUrl, feedback});
+            // console.log({resumeUrl, imageUrl, feedback});
         }
         loadResume();
     }, [id])

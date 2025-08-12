@@ -68,7 +68,7 @@ const Upload = () => {
         data.feedback = JSON.parse(feedbackText);
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
         setStatusText("Analysis complete, redirecting...");
-        console.log(data);
+        // console.log(data);
         navigate(`/resume/${uuid}`);
     }
 
@@ -82,7 +82,7 @@ const Upload = () => {
         const jobDescription = formData.get('job-description') as string;
         if(!file) return;
         handleAnalyze({companyName, jobTitle, jobDescription, file});
-        console.log({companyName, jobTitle, jobDescription, file});
+        // console.log({companyName, jobTitle, jobDescription, file});
     }
     return (
         <main className="bg-[url('images/bg-main.svg')] bg-cover">
